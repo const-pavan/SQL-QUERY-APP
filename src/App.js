@@ -7,7 +7,6 @@ const QueryResult = lazy(() => import('./components/QueryResult'))
 
 function App() {
   const [queryResult, setQueryResult] = useState([])
-  const [selectedFile, setSelectedFile] = useState(null)
 
   // Define the CSV file options
   const csvFileOptions = [
@@ -16,17 +15,6 @@ function App() {
     { label: 'Products', value: '/data/products.csv' },
     { label: 'Customers', value: '/data/customers.csv' },
   ]
-
-  const handleFileChange = (event) => {
-    const fileValue = event.target.value
-    const selectedOption = csvFileOptions.find(
-      (option) => option.value === fileValue
-    )
-
-    if (selectedOption) {
-      setSelectedFile(selectedOption.value)
-    }
-  }
 
   const handleQuerySubmit = async (fileToLoad) => {
     try {

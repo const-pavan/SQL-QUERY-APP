@@ -2,7 +2,7 @@
 
 **Task :** Create a SQL editor view where your users can query easily on a table using SQL, and see the results.
 
-The app is deployed at : **https://sql-editor-chi.vercel.app/**
+The app is deployed at : **https://sql-query-app-pavan.netlify.app/**
 
 App fulfils all the requirements that were mentioned by team Atlan.
 
@@ -47,3 +47,7 @@ After optimiztion
 - The app is fully responsive
 
 ## Screenshots
+
+![Home](./src/Images/Home.png)
+![Query](./src/Images/Query.png)
+![Result](./src/Images/Result.png)
