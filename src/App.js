@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import SqlQueryInput from './components/SqlQueryInput'
-import QueryResult from './components/QueryResult'
+import React, { useState, lazy, Suspense } from 'react'
 import './App.css'
 import Papa from 'papaparse'
+
+const SqlQueryInput = lazy(() => import('./components/SqlQueryInput'))
+const QueryResult = lazy(() => import('./components/QueryResult'))
 
 function App() {
   const [queryResult, setQueryResult] = useState([])
@@ -57,13 +58,17 @@ function App() {
         </div>
         <div className='right-section'>
           <h2>Query Data</h2>
-          <SqlQueryInput onSubmit={handleQuerySubmit} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <SqlQueryInput onSubmit={handleQuerySubmit} />
+          </Suspense>
         </div>
       </div>
       {queryResult.length > 0 && (
         <div className='query-result'>
           <h2>Query Result</h2>
-          <QueryResult result={queryResult} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <QueryResult result={queryResult} />
+          </Suspense>
         </div>
       )}
     </div>

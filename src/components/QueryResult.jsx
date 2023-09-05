@@ -83,4 +83,4 @@ function QueryResult({ result }) {
   )
 }
 
-export default QueryResult
+export default React.memo(QueryResult)

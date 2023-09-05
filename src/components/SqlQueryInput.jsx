@@ -18,7 +18,9 @@ function SqlQueryInput({ onSubmit }) {
     } else if (query.toLowerCase().includes('products')) {
       onSubmit('/data/products.csv')
     } else {
-      alert('No matching keyword found in the query. Please enter valid query')
+      alert(
+        'No matching keyword found in the query. Please enter a valid query'
+      )
     }
   }
 
@@ -36,4 +38,4 @@ function SqlQueryInput({ onSubmit }) {
   )
 }
 
-export default SqlQueryInput
+export default React.memo(SqlQueryInput)
