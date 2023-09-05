@@ -10,8 +10,12 @@ You can run different queries on the table and view data of each table.
 
 ## Features:
 
-- SQL Editor with syntax highlighting. Queries can be run and the editor can be cleared as well.
-- Tables can be exported to csv files.
+- List of avaiable Task and SQL Editor
+- Queries can be run and the editor can be cleared as well.
+- In result we can view diffrent pages
+- Oprion to changes size of page [5,10,25]
+- User can view the table data
+- User can run querys
 
 ## Major libraries
 
@@ -36,10 +40,14 @@ I have used csv files provided by team Atlan and useed papaparse to loaded it an
 - Lazy loading components like the editor and the table using dynamic imports.
 
 Page Load TIme has been calculated by using the [Lighthouse Tool](https://developers.google.com/web/tools/lighthouse).
-Old Performance
-![Lighthouse performance score](./src/Images/NewPerformance.png)
-After optimiztion
+
+# Old Performance
+
 ![Lighthouse performance score](./src/Images/OldPerformance.png)
+
+# After optimiztion, new performance
+
+![Lighthouse performance score](./src/Images/NewPerformance.png)
 
 ## User Interface
 
