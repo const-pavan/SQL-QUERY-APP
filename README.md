@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# SQL Editor- Atlan Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Task :** Create a SQL editor view where your users can query easily on a table using SQL, and see the results.
 
-## Available Scripts
+The app is deployed at : **https://sql-editor-chi.vercel.app/**
 
-In the project directory, you can run:
+App fulfils all the requirements that were mentioned by team Atlan.
 
-### `npm start`
+You can run different queries on the table and view data of each table.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- SQL Editor with syntax highlighting. Queries can be run and the editor can be cleared as well.
+- Tables can be exported to csv files.
 
-### `npm test`
+## Major libraries
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. React
+2. papaparse
+3. React-Ace
 
-### `npm run build`
+## Data
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I have used csv files provided by team Atlan and useed papaparse to loaded it anytime a query is demanding the data to be retrieved from the file.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Steps taken to Optimize
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Import for `react-ace` editor was long tasks running during page load, Converted it to Lazy loaded component using `React.lazy()` for code-splitting and delaying it's loading.
+2. The Suspense component is used to handle loading while the components are fetched.
+3. The React's React.memo and lazy-loading using React.lazy. React.memo will help prevent unnecessary re-renders of these components when their props haven't changed
+4. Only importing used Module in a component from library rather than importing whole library.
 
-### `npm run eject`
+## Performance
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Using react-ace for code splitting and pre rendering pages for increased performance.
+- Lazy loading components like the editor and the table using dynamic imports.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Page Load TIme has been calculated by using the [Lighthouse Tool](https://developers.google.com/web/tools/lighthouse).
+Old Performance
+![Lighthouse performance score](./src/Images/NewPerformance.png)
+After optimiztion
+![Lighthouse performance score](./src/Images/OldPerformance.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## User Interface
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- I have tried to keep the UI very clean and simple for better user experience.
+- The app is fully responsive
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screenshots
