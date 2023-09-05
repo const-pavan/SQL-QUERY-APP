@@ -32,7 +32,6 @@ function QueryResult({ result }) {
 
   return (
     <div>
-      <h2>CSV Data</h2>
       <div>
         <label htmlFor='rowsPerPageSelect'>Rows per page:</label>
         <select
@@ -70,15 +69,15 @@ function QueryResult({ result }) {
         >
           Previous
         </button>
+        <div className='pagination-text'>
+          Page {currentPage} of {totalPages}
+        </div>
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
           Next
         </button>
-        <div className='pagination-text'>
-          Page {currentPage} of {totalPages}
-        </div>
       </div>
     </div>
   )

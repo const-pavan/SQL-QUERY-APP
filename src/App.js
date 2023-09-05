@@ -11,8 +11,9 @@ function App() {
   // Define the CSV file options
   const csvFileOptions = [
     { label: 'Orders', value: '/data/orders.csv' },
-    { label: 'Customers', value: '/data/customers.csv' },
+    { label: 'Details', value: '/data/details.csv' },
     { label: 'Products', value: '/data/products.csv' },
+    { label: 'Customers', value: '/data/customers.csv' },
   ]
 
   const handleFileChange = (event) => {
@@ -39,20 +40,32 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>CSV Data Viewer</h1>
-      <div>
-        <label htmlFor='csvFileSelect'>Select CSV File:</label>
-        <select id='csvFileSelect' onChange={handleFileChange}>
-          <option value=''>Select a CSV file</option>
-          {csvFileOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        <SqlQueryInput onSubmit={handleQuerySubmit} />
+      <h1>SQL Data Viewer</h1>
+      <div className='container'>
+        <div className='left-section'>
+          <h2>Tables</h2>
+          <ul>
+            {csvFileOptions.map((option) => (
+              <li
+                key={option.label}
+                onClick={() => handleQuerySubmit(option.value)}
+              >
+                {option.label}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className='right-section'>
+          <h2>Query Data</h2>
+          <SqlQueryInput onSubmit={handleQuerySubmit} />
+        </div>
       </div>
-      {queryResult.length > 0 && <QueryResult result={queryResult} />}
+      {queryResult.length > 0 && (
+        <div className='query-result'>
+          <h2>Query Result</h2>
+          <QueryResult result={queryResult} />
+        </div>
+      )}
     </div>
   )
 }

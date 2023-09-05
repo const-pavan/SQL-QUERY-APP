@@ -13,10 +13,12 @@ function SqlQueryInput({ onSubmit }) {
       onSubmit('/data/customers.csv')
     } else if (query.toLowerCase().includes('orders')) {
       onSubmit('/data/orders.csv')
+    } else if (query.toLowerCase().includes('details')) {
+      onSubmit('/data/details.csv')
+    } else if (query.toLowerCase().includes('products')) {
+      onSubmit('/data/products.csv')
     } else {
-      alert(
-        'No matching keyword found in the query. Please enter "customers" or "orders".'
-      )
+      alert('No matching keyword found in the query. Please enter valid query')
     }
   }
 

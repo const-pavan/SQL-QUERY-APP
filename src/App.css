@@ -1,14 +1,55 @@
 /* App.css */
-
 .App {
   text-align: center;
-  font-family: Arial, sans-serif;
   margin: 20px;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
   font-size: 24px;
   margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.right-section {
+  flex: 2;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #e0e0e0;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 textarea {
@@ -36,40 +77,15 @@ button:hover {
 }
 
 /* Add this CSS to your stylesheet or component's CSS file */
-.container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.left-section {
-  flex: 1;
-  padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.right-section {
-  flex: 2;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.table-option {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.table-option:hover {
-  background-color: #e0e0e0;
-}
 
 /* Additional styles for QueryResult component */
 .query-result {
   margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow-x: auto; /* Add horizontal scroll if needed */
 }
 
 .pre {
@@ -82,7 +98,7 @@ button:hover {
 
 .query-table {
   border-collapse: collapse;
-  width: 100%;
+  width: 95%;
   margin-top: 20px;
 }
 
